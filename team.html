@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Team | Team SRMSAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .page-header {
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('https://placehold.co/1920x1080/0a0a0a/e2e8f0?text=Team+SRMSAT') no-repeat center center;
+            background-size: cover;
+            position: relative; /* For positioning the pseudo-element */
+            z-index: 0; /* Establish stacking context */
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('new logo with text.png'); /* The SRMSAT logo */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 250px; /* Adjust size as needed */
+            opacity: 0.1; /* Watermark effect */
+            z-index: -1; /* Place it behind the content */
+        }
+        .section-gradient {
+            background: radial-gradient(ellipse at center, rgba(29, 78, 216, 0.05), transparent 70%);
+        }
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent;
+            background-color: #111827; /* Slightly different from bg-slate-900/50 for more depth */
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(29, 78, 216, 0.2);
+            border-color: rgba(29, 78, 216, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="sticky top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-slate-800/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-white">TEAM SRMSAT</a>
+                </div>
+                <nav class="hidden md:flex md:space-x-8">
+                    <a href="about.html" class="text-slate-300 hover:text-white transition-colors duration-300">About</a>
+                    <a href="mission.html" class="text-slate-300 hover:text-white transition-colors duration-300">Mission</a>
+                    <a href="team.html" class="text-white font-semibold">Team</a>
+                    <a href="gallery.html" class="text-slate-300 hover:text-white transition-colors duration-300">Gallery</a>
+                    <a href="cubesat.html" class="text-slate-300 hover:text-white transition-colors duration-300">What is a CubeSat?</a>
+                    <a href="contact.html" class="text-slate-300 hover:text-white transition-colors duration-300">Contact Us</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/80 backdrop-blur-lg">
+            <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">About</a>
+                <a href="mission.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Mission</a>
+                <a href="team.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-slate-800">Team</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Gallery</a>
+                <a href="cubesat.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">What is a CubeSat?</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">Meet the Minds Behind the Mission</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-300">The driving force of SRMSAT: a dedicated team of students and the experienced faculty who guide them.</p>
+            </div>
+        </section>
+
+        <!-- Faculty Advisors Section -->
+        <section id="faculty" class="py-20 bg-black/20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white">Faculty Advisors</h2>
+                    <p class="mt-2 max-w-3xl mx-auto text-slate-400">The guiding force providing invaluable expertise, mentorship, and support to the student team.</p>
+                </div>
+                <div class="flex justify-center flex-wrap gap-8">
+                     <!-- Faculty Card: Muthuswamy Loganathan -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center w-full sm:w-3/4 lg:w-2/5">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="log.jpeg" alt="Muthuswamy Loganathan">
+                        <h3 class="text-xl font-bold text-white">Muthuswamy Loganathan</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Professor of Practice</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow text-left">
+                            Served with ISRO from 1973 until retirement in 2009, contributing to major projects like INSAT and IRS series missions. After retirement, he successfully guided the original SRMSAT-1 student satellite project, which is still functioning in orbit.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-700/50">
+                             <a href="https://in.linkedin.com/in/loganathan-muthusamy-aa694b13" target="_blank" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                                <i data-lucide="linkedin" class="w-4 h-4 mr-2"></i>
+                                View Profile
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Faculty Card: Dr. Joselin Retna Kumar G -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center w-full sm:w-3/4 lg:w-2/5">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="joselin.png" alt="Dr. Joselin Retna Kumar G">
+                        <h3 class="text-xl font-bold text-white">Dr. Joselin Retna Kumar G</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Professor & Head, EIE Dept.</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow text-left">
+                            A distinguished Professor with 18 years of experience, his expertise spans Industrial IoT, Digital Twin, and Wireless Sensor Networks. He is a prolific researcher with numerous publications and patents, contributing significantly to advancements in smart sensor development.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-700/50 flex justify-center space-x-4">
+                             <a href="https://www.linkedin.com/in/joselin-retna-kumar-3947b913b/?originalSubdomain=in" target="_blank" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                                <i data-lucide="linkedin" class="w-4 h-4 mr-2"></i>
+                                LinkedIn
+                            </a>
+                             <a href="https://www.srmist.edu.in/faculty/dr-g-joselin-retna-kumar/" target="_blank" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                                <i data-lucide="university" class="w-4 h-4 mr-2"></i>
+                                Faculty Page
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Team Section -->
+        <section id="student-team" class="py-20 section-gradient">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white">The Student Team</h2>
+                    <p class="mt-2 max-w-3xl mx-auto text-slate-400">A multidisciplinary group of passionate innovators, engineers, and future leaders in space technology.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    
+                    <!-- Team Member Card: Bhumi Penkar -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="bhumi.jpg" alt="Bhumi Penkar">
+                        <h3 class="text-xl font-bold text-white">Bhumi Penkar</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Mechanical and Designing</p>
+                        <p class="text-slate-300 text-xs mt-1">Aerospace Engineering | 2nd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">Future space architect in the making-turning big dreams into lightweight structures for the stars. Can be found crafting the satellite's backbone-designing, analyzing, and making sure every gram counts for orbit, as a part of mechanical structures in domain subsystem.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Mechanical Structures</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> Structures and Designing</p>
+                        </div>
+                    </div>
+
+                    <!-- Team Member Card: Varun -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="varun.jpg" alt="Varun">
+                        <h3 class="text-xl font-bold text-white">Varun Jalamanchili</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Onboard Computer Systems</p>
+                        <p class="text-slate-300 text-xs mt-1">Aerospace Engineering | 2nd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">At 1:33, Interstellar spoke of dimensions beyond- here at SRMSAT, explore them through code. Specializing in On-Board Computers subsystem with Avionics domain, and aerodynamics, the engineer precision into every bit and bolt.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Avionics</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> OBC</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member Card: Deenathayalan A -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="deena.jpg" alt="Deenathayalan A">
+                        <h3 class="text-xl font-bold text-white">Deenathayalan A</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Avionics & Control Systems</p>
+                        <p class="text-slate-300 text-xs mt-1">BTech Electronics and Communication Engg | 2nd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">I'm just a regular tech guy building robots and space gear-doing my bit to make things fly, one small test at a time, as a part of the Avionics subsystem and Control systems domain!</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Avionics</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> ADCS</p>
+                        </div>
+                    </div>
+
+                    <!-- Team Member Card: Nayan Raj -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="NAYAN%20.jpg" alt="Nayan Raj">
+                        <h3 class="text-xl font-bold text-white">Nayan Raj</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Onboard Computer Systems</p>
+                        <p class="text-slate-300 text-xs mt-1">BTech, Computer Science Engg (Core) | 3rd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">I work in the OBC domain, mostly wrangling computers no matter how big or small, enjoy making them tick. I love building with ROS and writing software that gives systems a mind of their own. Outside of tech, I'm into music, sketching, and finding ways to bring inanimate objects to life - by any means possible.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Avionics</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> OBC</p>
+                        </div>
+                    </div>
+
+                    <!-- Team Member Card: Chinmayee Bhattacharjee -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="CHINMAYEE.jpg" alt="Chinmayee Bhattacharjee">
+                        <h3 class="text-xl font-bold text-white">Chinmayee Bhattacharjee</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Research and Media/Corporate</p>
+                        <p class="text-slate-300 text-xs mt-1">BTech Biotechnology (w.s.Computational Biology) | 2nd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">A biotech student driven by a passion for biology, space, and literature. I manage public communications, relations, and research for the team, combining scientific insight with creative storytelling to bridge the gap between research and outreach.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Corporate/Media</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> Research & Outreach</p>
+                        </div>
+                    </div>
+
+                    <!-- Team Member Card: Abhishek Samanna -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="ABHISHEK.jpg" alt="Abhishek Samanna">
+                        <h3 class="text-xl font-bold text-white">Abhishek Samanna</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Communications Lead</p>
+                        <p class="text-slate-300 text-xs mt-1">BTech, Electronics and Comm. Engg (w.s. Data Science) | 3rd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">I'm the go-to techie in the team, working on patch antennas and duplex links to shape the future of satellite communication. I bring laid-back logic - building wireless bridges with a cool head and a passion for clean, reliable design.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Avionics</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> TTC (Communication)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member Card: JOSEWIN F -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="JOSEWIN%20F.jpg" alt="JOSEWIN F">
+                        <h3 class="text-xl font-bold text-white">JOSEWIN.F</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Mechanical Structures & Analysis</p>
+                        <p class="text-slate-300 text-xs mt-1">BTech, Mechanical Engg (w.s.Automation & Robotics) | 3rd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">Hi, I'm a mech engg student with a passion for machines, mechanisms, and the mysteries of space. My academic journey revolves around analyzing, and optimizing components for satellite and aerospace platforms. I'm on the lookout for ways to blend classic mechanical engineering with cutting-edge space tech.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Mechanical Structures</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> Analysis</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member Card: Hari Kumar Kollapan -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="HARI.jpg" alt="Hari Kumar Kollapan">
+                        <h3 class="text-xl font-bold text-white">Hari Kumar Kollapan</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Mechanical Structures</p>
+                        <p class="text-slate-300 text-xs mt-1">BTech, Mechanical Engineering | 3rd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">I work on the design and analysis of components to ensure they perform reliably under harsh conditions. I'm deeply interested in aerospace tech, advanced materials, and simulation tools that enhance efficiency. I'm a dedicated team player who enjoys tackling complex engineering challenges.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Mechanical Structures</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> Design & Analysis</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member Card: MITHUL R -->
+                    <div class="team-card rounded-lg p-6 flex flex-col text-center">
+                        <img class="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-slate-700 object-cover" src="MITHUL.jpg" alt="MITHUL R">
+                        <h3 class="text-xl font-bold text-white">MITHUL R</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Thermals</p>
+                        <p class="text-slate-300 text-xs mt-1">BTech, Mechanical Engineering | 3rd Year</p>
+                        <p class="text-slate-400 mt-4 text-sm flex-grow">I'm a mechanical engineer with a passion for thermal systems and space exploration. My role involves analyzing and managing the satellite's thermal environment to ensure all components operate within their required temperature ranges. I enjoy the challenge of designing solutions for the extreme conditions of space.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-700/50 text-xs">
+                            <p class="text-slate-400"><strong class="font-semibold">Domain:</strong> Mechanical</p>
+                            <p class="text-slate-500"><strong class="font-semibold">Subdomain:</strong> Thermals</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- University Logo Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <img src="srm_logo.png" alt="SRM Institute of Science and Technology Logo" class="mx-auto h-24">
+                <p class="mt-4 text-slate-500 text-sm">An official student club of SRM Institute of Science and Technology.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 border-t border-slate-800/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="md:flex md:justify-between md:items-center">
+                <div class="flex justify-center space-x-6 md:order-2">
+                    <a href="https://pr.linkedin.com/company/team-srmsat-space-systems-laboratory" class="text-slate-400 hover:text-white" target="_blank"><i data-lucide="linkedin"></i></a>
+                    <a href="https://www.instagram.com/srmsatofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-slate-400 hover:text-white" target="_blank"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white" target="_blank"><i data-lucide="github"></i></a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-base text-slate-400">
+                        &copy; 2025 Team SRMSAT. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMSAT-2 | SRM Student Satellite Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+        }
+        .video-background iframe {
+            width: 100vw;
+            height: 56.25vw; /* 16:9 aspect ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 aspect ratio */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+        .section-gradient {
+            background: radial-gradient(ellipse at center, rgba(29, 78, 216, 0.05), transparent 70%);
+        }
+        .domain-tab {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .domain-tab.active, .domain-tab:hover {
+            background-color: #1e40af; /* blue-800 */
+            color: #ffffff;
+        }
+        .team-card {
+            background-color: #111827;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+         .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(29, 78, 216, 0.15);
+        }
+        .ai-response-container p {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-white">TEAM SRMSAT</a>
+                </div>
+                <nav class="hidden md:flex md:space-x-8">
+                    <a href="about.html" class="text-slate-300 hover:text-white transition-colors duration-300">About</a>
+                    <a href="mission.html" class="text-slate-300 hover:text-white transition-colors duration-300">Mission</a>
+                    <a href="team.html" class="text-slate-300 hover:text-white transition-colors duration-300">Team</a>
+                    <a href="gallery.html" class="text-slate-300 hover:text-white transition-colors duration-300">Gallery</a>
+                    <a href="cubesat.html" class="text-slate-300 hover:text-white transition-colors duration-300">What is a CubeSat?</a>
+                    <a href="contact.html" class="text-slate-300 hover:text-white transition-colors duration-300">Contact Us</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/80 backdrop-blur-lg">
+            <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">About</a>
+                <a href="mission.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Mission</a>
+                <a href="team.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Team</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Gallery</a>
+                <a href="cubesat.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">What is a CubeSat?</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Video Background -->
+        <section class="hero-section">
+            <div class="video-background">
+                <iframe 
+                    src="https://www.youtube.com/embed/0FBiyFpV__g?autoplay=1&mute=1&loop=1&playlist=0FBiyFpV__g&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                    title="SRMSAT Background Video" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media">
+                </iframe>
+            </div>
+            <div class="video-overlay"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">Pioneering Nanosatellite Technology</h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 mb-8 drop-shadow-md">
+                    Building on a legacy of success, the students of SRMIST are developing the next generation of satellite technology.
+                </p>
+                <a href="about.html" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                    Discover Our Story
+                </a>
+            </div>
+        </section>
+
+        <!-- Legacy Section -->
+        <section id="legacy" class="py-20 section-gradient">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white">SRMSAT Club Legacy</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="pr-0 md:pr-12">
+                        <h3 class="text-2xl font-semibold text-white mb-4">The Triumph of SRMSAT-1</h3>
+                        <p class="text-slate-400 mb-4">
+                            The journey began with SRMSAT-1, a landmark nanosatellite built entirely by the students and faculty of SRM University. Launched by ISRO on October 12, 2011, its mission was to monitor greenhouse gases, contributing valuable data to climate science.
+                        </p>
+                        <p class="text-slate-400 mb-6">
+                            A testament to its robust design and the team's dedication, SRMSAT-1 has far outlived its planned mission duration. It remains operational in orbit to this day, a continuing source of pride and a powerful foundation for our current project, SRMSAT-2.
+                        </p>
+                        <div class="mt-6 space-y-4">
+                            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                               <iframe class="w-full h-full" src="https://www.youtube.com/embed/gbTj7E3S_n4?autoplay=1&mute=1&loop=1&playlist=gbTj7E3S_n4" title="SRMSAT-1 Launch Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                               <iframe class="w-full h-full" src="https://www.youtube.com/embed/ypWr7Ef19DY?autoplay=1&mute=1&loop=1&playlist=ypWr7Ef19DY" title="SRMSAT Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="new logo with text.png" alt="Team SRMSAT Logo" class="rounded-lg shadow-2xl mx-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Interactive Team Section -->
+        <section id="team-snippet" class="py-20 bg-black/20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white">Meet the Team</h2>
+                    <p class="max-w-2xl mx-auto text-slate-400 mt-2">Hover over a domain to see the brilliant minds behind it.</p>
+                </div>
+                
+                <!-- Domain Tabs -->
+                <div class="flex justify-center flex-wrap gap-4 mb-12">
+                    <div class="domain-tab active bg-slate-800 text-slate-300 font-semibold py-2 px-5 rounded-full" data-domain="mechanical">Mechanical</div>
+                    <div class="domain-tab bg-slate-800 text-slate-300 font-semibold py-2 px-5 rounded-full" data-domain="avionics">Avionics</div>
+                    <div class="domain-tab bg-slate-800 text-slate-300 font-semibold py-2 px-5 rounded-full" data-domain="corporate">Corporate & Media</div>
+                </div>
+
+                <!-- Team Member Cards Display -->
+                <div id="team-members-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Cards will be dynamically shown/hidden here -->
+                    
+                    <!-- Mechanical Domain Members -->
+                    <div class="team-card rounded-lg p-6 flex-col text-center" data-domain="mechanical">
+                        <h3 class="text-xl font-bold text-white">Bhumi Penkar</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Mechanical and Designing</p>
+                    </div>
+                    <div class="team-card rounded-lg p-6 flex-col text-center" data-domain="mechanical">
+                        <h3 class="text-xl font-bold text-white">JOSEWIN.F</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Mechanical Structures & Analysis</p>
+                    </div>
+                    <div class="team-card rounded-lg p-6 flex-col text-center" data-domain="mechanical">
+                        <h3 class="text-xl font-bold text-white">Hari Kumar Kollapan</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Mechanical Structures</p>
+                    </div>
+
+                    <!-- Avionics Domain Members -->
+                    <div class="team-card rounded-lg p-6 flex-col text-center hidden" data-domain="avionics">
+                        <h3 class="text-xl font-bold text-white">Varun Jalamanchili</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Onboard Computer Systems</p>
+                    </div>
+                     <div class="team-card rounded-lg p-6 flex-col text-center hidden" data-domain="avionics">
+                        <h3 class="text-xl font-bold text-white">Deenathayalan A</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Avionics & Control Systems</p>
+                    </div>
+                    <div class="team-card rounded-lg p-6 flex-col text-center hidden" data-domain="avionics">
+                        <h3 class="text-xl font-bold text-white">Nayan Raj</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Onboard Computer Systems</p>
+                    </div>
+                     <div class="team-card rounded-lg p-6 flex-col text-center hidden" data-domain="avionics">
+                        <h3 class="text-xl font-bold text-white">Abhishek Samanna</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Communications Lead</p>
+                    </div>
+
+                    <!-- Corporate & Media Domain Members -->
+                    <div class="team-card rounded-lg p-6 flex-col text-center hidden" data-domain="corporate">
+                        <h3 class="text-xl font-bold text-white">Chinmayee Bhattacharjee</h3>
+                        <p class="text-blue-400 font-semibold text-sm">Research and Media/Corporate</p>
+                    </div>
+                </div>
+                 <div class="text-center mt-12">
+                     <a href="team.html" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                        See Full Team Details
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gemini AI Bot Section -->
+        <section id="ai-section" class="py-20 section-gradient">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center">
+                     <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">✨ Ask SRMSAT AI</h2>
+                     <p class="mt-4 text-lg leading-8 text-slate-300">
+                        Have questions about our missions, technology, or space in general? Ask our AI assistant.
+                     </p>
+                </div>
+                <div class="mt-8 max-w-xl mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="text" id="ai-prompt-input" class="w-full px-4 py-3 rounded-md bg-slate-800 text-white border border-slate-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="e.g., What was the purpose of SRMSAT-1?">
+                        <button id="ai-ask-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300 flex items-center justify-center">
+                            <span id="button-text">Ask AI</span>
+                            <svg id="button-loader" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="ai-response-container" class="mt-6 bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-slate-300 min-h-[100px] ai-response-container">
+                        Your answer will appear here...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- University Logo Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <img src="srm_logo.png" alt="SRM Institute of Science and Technology Logo" class="mx-auto h-24">
+                <p class="mt-4 text-slate-500 text-sm">An official student club of SRM Institute of Science and Technology.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 border-t border-slate-800/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="md:flex md:justify-between md:items-center">
+                <div class="flex justify-center space-x-6 md:order-2">
+                    <a href="https://pr.linkedin.com/company/team-srmsat-space-systems-laboratory" class="text-slate-400 hover:text-white" target="_blank"><i data-lucide="linkedin"></i></a>
+                    <a href="https://www.instagram.com/srmsatofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-slate-400 hover:text-white" target="_blank"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white" target="_blank"><i data-lucide="github"></i></a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-base text-slate-400">
+                        &copy; 2025 Team SRMSAT. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Change header background on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-black/30', 'backdrop-blur-lg');
+            } else {
+                header.classList.remove('bg-black/30', 'backdrop-blur-lg');
+            }
+        });
+        
+        // Interactive Team Section Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const domainTabs = document.querySelectorAll('.domain-tab');
+            const teamCards = document.querySelectorAll('#team-members-grid .team-card');
+
+            function showMembers(domain) {
+                domainTabs.forEach(t => t.classList.remove('active'));
+                const activeTab = document.querySelector(`.domain-tab[data-domain="${domain}"]`);
+                if (activeTab) activeTab.classList.add('active');
+
+                teamCards.forEach(card => {
+                    if (card.dataset.domain === domain) {
+                        card.classList.remove('hidden');
+                        card.classList.add('flex');
+                    } else {
+                        card.classList.add('hidden');
+                        card.classList.remove('flex');
+                    }
+                });
+            }
+
+            domainTabs.forEach(tab => {
+                tab.addEventListener('mouseover', () => {
+                    const domain = tab.dataset.domain;
+                    showMembers(domain);
+                });
+            });
+            showMembers('mechanical');
+        });
+
+        // --- Gemini API Integration ---
+        const askButton = document.getElementById('ai-ask-button');
+        const promptInput = document.getElementById('ai-prompt-input');
+        const responseContainer = document.getElementById('ai-response-container');
+        const buttonText = document.getElementById('button-text');
+        const buttonLoader = document.getElementById('button-loader');
+
+        askButton.addEventListener('click', handleAskAI);
+        promptInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleAskAI();
+            }
+        });
+
+        async function handleAskAI() {
+            const userPrompt = promptInput.value.trim();
+            if (!userPrompt) {
+                responseContainer.textContent = 'Please enter a question.';
+                return;
+            }
+
+            buttonText.classList.add('hidden');
+            buttonLoader.classList.remove('hidden');
+            askButton.disabled = true;
+            responseContainer.innerHTML = 'Thinking...';
+
+            try {
+                const fullPrompt = `You are an AI assistant for SRMSAT, a student satellite project from SRM Institute of Science and Technology. Your goal is to answer questions from the public. Key information about SRMSAT: SRMSAT-1 was our first nanosatellite, launched in 2011 to monitor greenhouse gases. The team is composed of undergraduate and postgraduate students. Our mission is to build low-cost satellites for scientific research. Our vision is to become a center of excellence in student-driven space research. Based on this context, please answer the following user question: "${userPrompt}"`;
+
+                let chatHistory = [{ role: "user", parts: [{ text: fullPrompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // API key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    const formattedText = text.split('\n').map(p => `<p>${p}</p>`).join('');
+                    responseContainer.innerHTML = formattedText;
+                } else {
+                    responseContainer.textContent = 'Sorry, I could not generate a response.';
+                }
+
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                responseContainer.textContent = 'Sorry, an error occurred. Please check the console for details.';
+            } finally {
+                buttonText.classList.remove('hidden');
+                buttonLoader.classList.add('hidden');
+                askButton.disabled = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
